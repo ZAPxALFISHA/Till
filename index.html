@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>For My Queen Alfisha 👑❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============ BASE ============ */
+:root{
+  --gold:#e9c884;
+  --gold-2:#ffd98a;
+  --rose:#ff5f8f;
+  --rose-2:#ff8fb3;
+  --rose-soft:#ffc2d6;
+  --cream:#fff2f7;
+  --line:rgba(233,200,132,.28);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+
+html{
+  scroll-behavior:smooth;
+  overflow-x:hidden;
+}
+body{
+  font-family:'Poppins',sans-serif;
+  color:var(--cream);
+  background:radial-gradient(1200px 900px at 50% 0%, #4a0024 0%, #23000f 40%, #0b0004 100%);
+  background-attachment:fixed;
+  min-height:100vh;
+  overflow-x:hidden;
+  position:relative;
+}
+
+/* Aurora background */
+.aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.aurora span{position:absolute;border-radius:50%;filter:blur(100px);opacity:.35;animation:floatBlob 22s ease-in-out infinite;}
+.aurora span:nth-child(1){width:460px;height:460px;background:#ff2f6e;top:-140px;left:-120px;}
+.aurora span:nth-child(2){width:420px;height:420px;background:#7a1030;bottom:20%;right:-100px;animation-delay:-7s;}
+.aurora span:nth-child(3){width:340px;height:340px;background:#ff8fb3;top:45%;left:55%;animation-delay:-13s;opacity:.18;}
+.aurora span:nth-child(4){width:300px;height:300px;background:#ffb84d;top:75%;left:-80px;animation-delay:-18s;opacity:.14;}
+@keyframes floatBlob{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(50px,-40px) scale(1.18);}}
+
+/* Petals */
+#petal-canvas{position:fixed;inset:0;z-index:1;pointer-events:none;}
+
+/* Music widget */
+.music-widget{
+  position:fixed;top:calc(14px + env(safe-area-inset-top));right:14px;z-index:120;
+  background:rgba(255,0,90,.16);border:1px solid rgba(233,200,132,.45);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  padding:8px 15px;border-radius:40px;
+  display:flex;align-items:center;gap:8px;cursor:pointer;
+  box-shadow:0 0 24px rgba(255,0,90,.4);transition:.3s;
+  font-size:.72rem;font-weight:500;color:var(--gold-2);
+}
+.music-widget:hover{transform:scale(1.05);border-color:var(--gold-2);}
+.eq{display:flex;align-items:flex-end;gap:2px;height:13px;}
+.eq i{display:block;width:3px;background:var(--gold-2);border-radius:2px;animation:eq 1s ease-in-out infinite;}
+.eq i:nth-child(1){height:6px;}
+.eq i:nth-child(2){height:12px;animation-delay:.2s;}
+.eq i:nth-child(3){height:8px;animation-delay:.4s;}
+.eq i:nth-child(4){height:13px;animation-delay:.6s;}
+.music-widget.paused .eq i{animation-play-state:paused;height:4px;}
+@keyframes eq{0%,100%{transform:scaleY(.4);}50%{transform:scaleY(1);}}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;z-index:2;
+  min-height:100vh;min-height:100dvh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:40px 24px;
+}
+.hero-kicker{
+  font-family:'Cinzel',serif;letter-spacing:6px;font-size:.68rem;
+  color:var(--gold);text-transform:uppercase;margin-bottom:22px;opacity:.9;
+}
+.hero-seal{
+  width:128px;height:128px;border-radius:50%;
+  background:radial-gradient(circle at 35% 28%, #ff96b6 0%, #d81b60 45%, #7a0025 100%);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Great Vibes',cursive;font-size:4.4rem;color:#ffe9a8;
+  text-shadow:0 2px 12px rgba(0,0,0,.6);
+  box-shadow:0 0 0 6px rgba(255,255,255,.05),0 0 70px rgba(255,60,120,.65),
+             inset 0 -10px 26px rgba(0,0,0,.55),inset 0 6px 18px rgba(255,255,255,.25);
+  position:relative;animation:pulseSeal 2.6s ease-in-out infinite;
+  margin-bottom:34px;
+}
+.hero-seal::after{content:"";position:absolute;inset:-20px;border-radius:50%;border:1px dashed rgba(233,200,132,.5);animation:spin 24s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+@keyframes pulseSeal{
+  0%,100%{box-shadow:0 0 0 6px rgba(255,255,255,.05),0 0 70px rgba(255,60,120,.55),inset 0 -10px 26px rgba(0,0,0,.55),inset 0 6px 18px rgba(255,255,255,.25);}
+  50%{box-shadow:0 0 0 16px rgba(255,255,255,.02),0 0 110px rgba(255,60,120,.9),inset 0 -10px 26px rgba(0,0,0,.55),inset 0 6px 18px rgba(255,255,255,.25);}
+}
+.hero-title{
+  font-family:'Great Vibes',cursive;font-size:clamp(2.6rem,8.5vw,4.8rem);
+  line-height:1.1;max-width:900px;
+  background:linear-gradient(100deg,#ffd98a,#ff6fa5,#ffd98a,#ff6fa5,#ffd98a);
+  background-size:300% auto;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  animation:shine 7s linear infinite;
+  filter:drop-shadow(0 0 26px rgba(255,60,120,.4));
+}
+@keyframes shine{to{background-position:300% center;}}
+.hero-sub{
+  margin-top:18px;color:var(--rose-soft);font-size:clamp(.85rem,3vw,1.05rem);
+  letter-spacing:.4px;max-width:620px;line-height:1.7;
+}
+.hero-hint{
+  margin-top:48px;font-size:.65rem;letter-spacing:4px;text-transform:uppercase;
+  color:rgba(255,255,255,.55);animation:blink 2.2s infinite;
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+}
+.hero-hint .arrow{
+  width:24px;height:24px;border-right:2px solid var(--gold-2);
+  border-bottom:2px solid var(--gold-2);transform:rotate(45deg);
+  animation:bounceArrow 1.8s ease-in-out infinite;
+}
+@keyframes bounceArrow{0%,100%{transform:rotate(45deg) translate(0,0);opacity:.5;}50%{transform:rotate(45deg) translate(6px,6px);opacity:1;}}
+@keyframes blink{0%,100%{opacity:.4;}50%{opacity:1;}}
+
+/* ============ SCROLL CONTAINER ============ */
+.scroll-wrap{
+  position:relative;z-index:2;
+  max-width:960px;margin:0 auto;
+  padding:20px 18px 90px;
+}
+
+/* ============ REVEAL ANIMATIONS ============ */
+.reveal{
+  opacity:0;
+  transform:translateY(70px) scale(.97);
+  filter:blur(6px);
+  transition:opacity 1s cubic-bezier(.19,1,.22,1),
+             transform 1s cubic-bezier(.19,1,.22,1),
+             filter .9s cubic-bezier(.19,1,.22,1);
+  will-change:opacity,transform,filter;
+}
+.reveal.from-top{transform:translateY(-70px) scale(.97);}
+.reveal.visible{opacity:1;transform:translateY(0) scale(1);filter:blur(0);}
+
+/* ============ SECTION ============ */
+.section{
+  margin-bottom:70px;
+  padding-top:24px;
+}
+.sec-head{text-align:center;margin-bottom:26px;}
+.badge{
+  display:inline-block;background:linear-gradient(90deg,#ff2f6e,#ff8fb3);
+  color:#fff;padding:6px 20px;border-radius:30px;
+  font-size:.62rem;letter-spacing:3px;text-transform:uppercase;
+  box-shadow:0 0 18px rgba(255,47,110,.6);margin-bottom:14px;font-weight:500;
+}
+.sec-title{
+  font-family:'Great Vibes',cursive;font-size:clamp(2.1rem,7vw,3.4rem);
+  line-height:1.12;
+  background:linear-gradient(45deg,#ffd98a,#ff4d88,#ffc2d6,#ffd98a);
+  background-size:250% auto;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  animation:shine 7s linear infinite;
+  filter:drop-shadow(0 0 20px rgba(255,60,120,.35));
+}
+.sec-sub{font-family:'Cinzel',serif;color:var(--gold);letter-spacing:3px;font-size:.68rem;margin-top:6px;opacity:.9;}
+
+.divider{
+  width:150px;height:1px;margin:20px auto 0;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  position:relative;
+}
+.divider::after{
+  content:"❤";position:absolute;top:-10px;left:50%;transform:translateX(-50%);
+  font-size:.8rem;color:var(--rose);padding:0 10px;
+}
+
+/* ============ POLAROIDS ============ */
+.gallery{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:22px;margin-bottom:24px;
+}
+.polaroid{
+  background:linear-gradient(180deg,#fffdfa,#f5e9e2);
+  padding:11px 11px 17px;border-radius:8px;
+  box-shadow:0 16px 40px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.06);
+  transition:transform .5s cubic-bezier(.19,1,.22,1),box-shadow .5s;
+  cursor:pointer;position:relative;
+}
+.polaroid:nth-child(odd){transform:rotate(-2.2deg);}
+.polaroid:nth-child(even){transform:rotate(2deg);}
+.polaroid:hover{
+  transform:rotate(0deg) scale(1.05) translateY(-8px);
+  box-shadow:0 26px 60px rgba(0,0,0,.9),0 0 40px rgba(255,60,120,.6);
+  z-index:5;
+}
+.polaroid img{width:100%;height:225px;object-fit:cover;border-radius:4px;display:block;background:#1a000b;}
+.polaroid-cap{
+  font-family:'Great Vibes',cursive;font-size:1.4rem;color:#3a0018;
+  text-align:center;margin-top:10px;line-height:1.2;
+}
+
+/* ============ TEXT CARD ============ */
+.card-box{
+  background:linear-gradient(160deg,rgba(255,255,255,.065),rgba(255,255,255,.02));
+  border:1px solid var(--line);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  padding:30px 26px;border-radius:22px;
+  box-shadow:0 24px 60px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.07);
+  line-height:1.9;font-size:clamp(.9rem,2.9vw,1.03rem);color:#ffe9f2;
+  position:relative;overflow:hidden;
+}
+.card-box::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(233,200,132,.7),transparent);
+}
+.card-box p{margin-bottom:14px;}
+.card-box p:last-child{margin-bottom:0;}
+.card-box.center{text-align:center;}
+.gold{color:var(--gold-2);font-weight:500;}
+.pink{color:var(--rose-2);font-weight:500;}
+
+/* ============ VIDEO GRID ============ */
+.video-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:16px;
+}
+.video-card{
+  background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.015));
+  border:1px solid rgba(255,60,120,.28);
+  border-radius:16px;overflow:hidden;
+  box-shadow:0 10px 26px rgba(0,0,0,.6);
+  transition:transform .45s cubic-bezier(.19,1,.22,1),border-color .45s,box-shadow .45s;
+}
+.video-card:hover{
+  transform:translateY(-7px);border-color:var(--gold-2);
+  box-shadow:0 20px 40px rgba(0,0,0,.85),0 0 28px rgba(255,60,120,.45);
+}
+.video-card video{
+  width:100%;height:190px;object-fit:cover;display:block;background:#000;
+}
+.video-title{
+  text-align:center;padding:10px;font-size:.8rem;
+  color:var(--rose-soft);font-weight:500;letter-spacing:1px;
+  background:rgba(0,0,0,.6);
+}
+
+/* ============ RULE CARDS ============ */
+.rules-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;
+}
+.rule-card{
+  background:linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,255,255,.015));
+  border:1px solid rgba(255,60,120,.24);
+  padding:26px 22px;border-radius:18px;text-align:center;
+  transition:.45s;position:relative;overflow:hidden;
+}
+.rule-card::after{
+  content:"";position:absolute;inset:0;border-radius:18px;
+  background:radial-gradient(circle at 50% 0%,rgba(255,60,120,.24),transparent 70%);
+  opacity:0;transition:.45s;
+}
+.rule-card:hover{
+  transform:translateY(-7px);border-color:var(--gold-2);
+  box-shadow:0 20px 44px rgba(0,0,0,.75),0 0 30px rgba(255,60,120,.4);
+}
+.rule-card:hover::after{opacity:1;}
+.rule-card h3{
+  font-family:'Cinzel',serif;color:var(--gold-2);
+  font-size:1rem;margin-bottom:10px;letter-spacing:1px;position:relative;z-index:1;
+}
+.rule-card p{color:#ffd6e4;font-size:.92rem;line-height:1.75;position:relative;z-index:1;}
+
+/* ============ ENVELOPE / LETTER ============ */
+.envelope{
+  background:linear-gradient(160deg,rgba(255,0,90,.1),rgba(255,255,255,.02));
+  border:1px solid var(--line);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  padding:34px 22px;border-radius:22px;text-align:center;
+  box-shadow:0 24px 60px rgba(0,0,0,.6);
+}
+.wax{
+  width:86px;height:86px;margin:0 auto 14px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#ff96b6,#d81b60 55%,#7a0025);
+  display:flex;align-items:center;justify-content:center;font-size:2.4rem;
+  box-shadow:0 0 36px rgba(255,60,120,.7),inset 0 -8px 16px rgba(0,0,0,.5);
+  cursor:pointer;transition:transform .35s;animation:pulseSeal 2.8s ease-in-out infinite;
+}
+.wax:hover{transform:scale(1.14) rotate(10deg);}
+.letter-body{
+  display:none;text-align:left;font-size:clamp(.86rem,2.8vw,.98rem);line-height:1.9;
+  color:#ffe9f2;background:rgba(0,0,0,.32);
+  padding:22px;border-radius:16px;
+  border:1px dashed rgba(233,200,132,.35);margin-top:16px;
+  animation:letterOpen .8s cubic-bezier(.19,1,.22,1) both;
+}
+@keyframes letterOpen{from{opacity:0;transform:translateY(20px) scale(.97);}to{opacity:1;transform:none;}}
+.letter-body p{margin-bottom:14px;}
+.letter-body p:last-child{margin-bottom:0;}
+
+/* ============ FINAL ============ */
+.final{
+  text-align:center;padding:50px 20px 30px;
+}
+.final-heart{
+  font-size:3.4rem;animation:heartBeat 1.6s ease-in-out infinite;
+  filter:drop-shadow(0 0 24px rgba(255,60,120,.7));
+}
+@keyframes heartBeat{0%,100%{transform:scale(1);}15%{transform:scale(1.18);}30%{transform:scale(1);}45%{transform:scale(1.12);}}
+.final-title{
+  font-family:'Great Vibes',cursive;font-size:clamp(2rem,7vw,3.2rem);
+  margin-top:16px;
+  background:linear-gradient(45deg,#ffd98a,#ff4d88,#ffd98a);
+  background-size:250% auto;
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  animation:shine 6s linear infinite;
+}
+.final-sub{
+  margin-top:14px;font-size:clamp(1rem,3.4vw,1.25rem);
+  color:#ffe9f2;letter-spacing:.5px;
+}
+
+/* ============ LIGHTBOX ============ */
+.lightbox{
+  position:fixed;inset:0;z-index:850;background:rgba(5,0,2,.95);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  display:none;justify-content:center;align-items:center;padding:20px;
+}
+.lightbox.show{display:flex;animation:fadeIn .35s ease both;}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+.lightbox img{
+  max-width:100%;max-height:85vh;border-radius:10px;border:3px solid #fff;
+  box-shadow:0 0 80px rgba(255,60,120,.55);
+}
+.lb-close{
+  position:absolute;top:calc(16px + env(safe-area-inset-top));right:22px;
+  font-size:2rem;color:var(--gold-2);cursor:pointer;background:none;border:none;line-height:1;
+}
+
+/* click heart */
+.click-heart{
+  position:fixed;pointer-events:none;z-index:999;
+  font-size:1.4rem;animation:popHeart 1.1s ease-out forwards;
+}
+@keyframes popHeart{
+  0%{opacity:1;transform:translate(-50%,-50%) scale(.4);}
+  100%{opacity:0;transform:translate(-50%,-170%) scale(1.5);}
+}
+
+/* Responsive */
+@media(max-width:640px){
+  .scroll-wrap{padding:10px 14px 70px;}
+  .section{margin-bottom:56px;}
+  .polaroid img{height:190px;}
+  .polaroid-cap{font-size:1.2rem;}
+  .video-card video{height:160px;}
+  .video-grid{grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;}
+  .card-box{padding:24px 20px;border-radius:18px;}
+}
+@media(max-width:380px){
+  .gallery{grid-template-columns:1fr 1fr;gap:12px;}
+  .polaroid img{height:140px;}
+  .polaroid-cap{font-size:1rem;}
+}
+</style>
+</head>
+<body>
+
+<div class="aurora"><span></span><span></span><span></span><span></span></div>
+<canvas id="petal-canvas"></canvas>
+
+<!-- ============ MUSIC ============ -->
+<div class="music-widget paused" id="musicWidget" onclick="toggleAudio()">
+  <div class="eq"><i></i><i></i><i></i><i></i></div>
+  <span id="music-text">Play Music</span>
+  <audio id="bg-music" loop preload="auto"><source src="music.mp3" type="audio/mpeg"></audio>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-kicker reveal">Mere Till Ki Duniya</div>
+  <div class="hero-seal reveal">A</div>
+  <h1 class="hero-title reveal">I Love You Jaanu 😘</h1>
+  <p class="hero-sub reveal">Yaar, aap mere liye itna karte ho, kya bolu 🥹❤️</p>
+  <div class="hero-hint reveal">
+    <span>Scroll Down</span>
+    <div class="arrow"></div>
+  </div>
+</header>
+
+<!-- ============ SCROLL CONTENT ============ -->
+<main class="scroll-wrap">
+
+  <!-- ===== SECTION 1 ===== -->
+  <section class="section">
+    <div class="sec-head reveal">
+      <span class="badge">Dil Ki Baat 💌</span>
+      <h2 class="sec-title">Jaanu, I Love You 😘</h2>
+      <div class="sec-sub">AAP MERE LIYE ITNA KARTE HO...</div>
+      <div class="divider"></div>
+    </div>
+
+    <div class="gallery">
+      <div class="polaroid reveal" onclick="openLightbox('zap.jpg')">
+        <img src="zap.jpg" alt="Memory">
+        <div class="polaroid-cap">My Absolute Favorite View! 😍</div>
+      </div>
+      <div class="polaroid reveal" onclick="openLightbox('zap1.jpg')">
+        <img src="zap1.jpg" alt="Memory">
+        <div class="polaroid-cap">Cutest Kaleshi Aurat 😜❤️</div>
+      </div>
+    </div>
+
+    <div class="card-box center reveal">
+      <p>Jaanu, I love you 😘💕😘 Yaar, aap mere liye itna karte ho, yaar kya bolu 🥹❤️ Mujhe ladai karni hai, 3-4 dino se hui nahi hai 🥺 Pehle ek bahana tha, ladai karne ka. Mood hota tha to mujhe pata tha ki iske liye bolunga to ladai hogi, aur aap mere se ladai karte-karte baat karoge. Video call pe aapko gusse mein dekhunga, pareshan karunga aur pareshan karte-karte aapko hasaunga, manaunga 🥹❤️</p>
+      <p class="gold">Yaar, par ab ye sab ka mauka nahi mil raha hai mujhe 🥺 Ab mujhe ladai karne ke liye koi bahana nahi bacha hai aapse. Ab kya bahana banaun aapse ladai karne ka? Pehli ladai bobos ke liye hua karti thi, fir till ke liye. Ab dono hai, par ladai karne ki wajah nahi hai. Dono pe kya bolu, jaanu? 🥺</p>
+      <p class="pink">Anyways, mil to jayega ek na ek bahana ladai ka. Jis din aap mujhse firse poori tarah se video call pe baat karoge, jaise ek baar kiya tha aapne, to till nikla hamare beech ladai ka karan. Is baar bhi nikal ayega, jaanu 🤭❤️</p>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 2 ===== -->
+  <section class="section">
+    <div class="sec-head reveal">
+      <span class="badge">Sapna Aur Till 💭</span>
+      <h2 class="sec-title">Mere Till Ki Baatein 🙈</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="gallery">
+      <div class="polaroid reveal" onclick="openLightbox('zap2.jpg')">
+        <img src="zap2.jpg" alt="Memory"><div class="polaroid-cap">Sukoon E Dil ✨</div>
+      </div>
+      <div class="polaroid reveal" onclick="openLightbox('zap3.jpg')">
+        <img src="zap3.jpg" alt="Memory"><div class="polaroid-cap">Hamesha Aise Hi Hasna 😂🍿</div>
+      </div>
+      <div class="polaroid reveal" onclick="openLightbox('zap4.jpg')">
+        <img src="zap4.jpg" alt="Memory"><div class="polaroid-cap">Our Special World 🌍💖</div>
+      </div>
+      <div class="polaroid reveal" onclick="openLightbox('zap5.jpg')">
+        <img src="zap5.jpg" alt="Memory"><div class="polaroid-cap">Malkin Alfisha Forever 💍</div>
+      </div>
+    </div>
+
+    <div class="card-box reveal">
+      <p>Waise aapke saath ladai ka mood hai, kaise karu jaanu? 🥺❤️ Ye sab chhoro, bachha… mere till 🙈❤️ kya lagte hain, jaanu? Raat ko sapne mein pata hai, aap jabardasti sir pakad ke bol rahe the, “Achhe se dekho, samjhe? Roz dekhna hai tumhe, ab main dikhaungi.” 🥹❤️</p>
+      <p class="gold">Yaar jaanu, sapne mein bhi aap gussa karte ho. Fir bolte ho, “Dekh liya, ab khush?” Upar se aapko kiss bhi chahiye gusse mein 😘😘😘 Kya hi sapna tha, jaanu ❤️</p>
+      <p class="pink">Aur bolte ho sapne mein bobos nahi, ab aapko hamesha mera till dekhna hai. Usko dekho aap, kuchh hua use to batao. Kya-kya sapne mein aakar karte ho jaanu ❤️ Anyways, sapna tha, chhoro. Par achha tha sapna 🥹❤️</p>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 3 ===== -->
+  <section class="section">
+    <div class="sec-head reveal">
+      <span class="badge">Shaadi Aur Milne Ki Baat 💍</span>
+      <h2 class="sec-title">Jaldi Shaadi Karni Hai ❤️</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="gallery">
+      <div class="polaroid reveal" onclick="openLightbox('zap6.jpg')">
+        <img src="zap6.jpg" alt="Memory"><div class="polaroid-cap">Meri Jaan Alfisha ❤️</div>
+      </div>
+      <div class="polaroid reveal" onclick="openLightbox('zap7.jpg')">
+        <img src="zap7.jpg" alt="Memory"><div class="polaroid-cap">Hamesha Meri Rehna 👑</div>
+      </div>
+    </div>
+
+    <div class="card-box reveal">
+      <p>Aur ab mujhe shaadi bhi jaldi karna hai, samjhe? ❤️ Next year karna hai, matlab karna hai. Koi bahana nahi. Agar ghar wale maan gaye to thik, nahi to aap bata dena kya karna hai. Bhagna hai ya nahi? Bataoge kaise, kon batayega mujhe ye sabhi baatein jaanu? 🥺❤️ Agar aapko phone nahi mila to?</p>
+      <p class="gold">Aur ab wo din dur nahi ki main aapke saamne dikhu ❤️ Matlab isi month ke ending mein ya fir mahine ke starting ke 1-2 tarikh ko aaunga. To jaanu, momos milega ya nahi 🙈❤️ Ye bhi nahi pata hame.</p>
+    </div>
+  </section>
+
+  <!-- ===== LETTER ===== -->
+  <section class="section">
+    <div class="envelope reveal">
+      <div class="wax" id="waxBtn" onclick="openLetter()">💌</div>
+      <p class="gold" id="waxHint" style="font-size:.85rem;letter-spacing:1px;">(Tap the seal to read my letter)</p>
+
+      <div class="letter-body" id="letterBody">
+        <p>Anyways, ab chat mein bata diya karunga sabhi baatein aapko ❤️ To mera mehnat se website banaya hua aapko pasand nahi aayega hai na? 🥺 Mere efforts kahan dikhenge aapko jaanu? Main to free rehta hoon, aisa lagta hai na aapke liye? 🥺❤️</p>
+        <p class="gold">To haan, aapke liye hamesha free rehta hoon. Sabse pehle aap ho, uske baad kaam hai mere liye ❤️</p>
+        <p style="font-size:1.05rem;margin-top:14px;">I love you jaanu 😘😘😘😘❤️🫶🏻</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VIDEO SECTION ===== -->
+  <section class="section">
+    <div class="sec-head reveal">
+      <span class="badge">Videos &amp; Yaadein 🎥</span>
+      <h2 class="sec-title">Hamari Yaadein</h2>
+      <div class="sec-sub">ZAP KI SUKOON KI CHIJE 🥰</div>
+      <div class="divider"></div>
+    </div>
+
+    <div class="video-grid">
+      <div class="video-card reveal"><video controls preload="metadata"><source src="zap1.mp4" type="video/mp4"></video><div class="video-title">Video 1</div></div>
+      <div class="video-card reveal"><video controls preload="metadata"><source src="zap2.mp4" type="video/mp4"></video><div class="video-title">Video 2</div></div>
+      <div class="video-card reveal"><video controls preload="metadata"><source src="zap3.mp4" type="video/mp4"></video><div class="video-title">Video 3</div></div>
+      <div class="video-card reveal"><video controls preload="metadata"><source src="zap4.mp4" type="video/mp4"></video><div class="video-title">Video 4</div></div>
+      <div class="video-card reveal"><video controls preload="metadata"><source src="zap5.mp4" type="video/mp4"></video><div class="video-title">Video 5</div></div>
+      <div class="video-card reveal"><video controls preload="metadata"><source src="zap6.mp4" type="video/mp4"></video><div class="video-title">Video 6</div></div>
+      <div class="video-card reveal"><video controls preload="metadata"><source src="zap7.mp4" type="video/mp4"></video><div class="video-title">Video 7</div></div>
+      <div class="video-card reveal"><video controls preload="metadata"><source src="zap8.mp4" type="video/mp4"></video><div class="video-title">Video 8</div></div>
+      <div class="video-card reveal"><video controls preload="metadata"><source src="zap9.mp4" type="video/mp4"></video><div class="video-title">Video 9</div></div>
+      <div class="video-card reveal"><video controls preload="metadata"><source src="zap10.mp4" type="video/mp4"></video><div class="video-title">Video 10</div></div>
+      <div class="video-card reveal"><video controls preload="metadata"><source src="zap11.mp4" type="video/mp4"></video><div class="video-title">Video 11</div></div>
+      <div class="video-card reveal"><video controls preload="metadata"><source src="zap12.mp4" type="video/mp4"></video><div class="video-title">Video 12</div></div>
+      <div class="video-card reveal"><video controls preload="metadata"><source src="zap13.mp4" type="video/mp4"></video><div class="video-title">Video 13</div></div>
+      <div class="video-card reveal"><video controls preload="metadata"><source src="zap14.mp4" type="video/mp4"></video><div class="video-title">Video 14</div></div>
+      <div class="video-card reveal"><video controls preload="metadata"><source src="zap15.mp4" type="video/mp4"></video><div class="video-title">Video 15</div></div>
+      <div class="video-card reveal"><video controls preload="metadata"><source src="zap16.mp4" type="video/mp4"></video><div class="video-title">Video 16</div></div>
+      <div class="video-card reveal"><video controls preload="metadata"><source src="zap17.mp4" type="video/mp4"></video><div class="video-title">Video 17</div></div>
+    </div>
+  </section>
+
+  <!-- ===== RULES ===== -->
+  <section class="section">
+    <div class="sec-head reveal">
+      <span class="badge">Humare Rules 📜</span>
+      <h2 class="sec-title">Rules Of Our Love</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="rules-grid">
+      <div class="rule-card reveal">
+        <h3>Rule No. 1</h3>
+        <p>Mujhe ladai karni hai, 3-4 dino se hui nahi hai 🥺</p>
+      </div>
+      <div class="rule-card reveal">
+        <h3>Rule No. 2</h3>
+        <p>Ab mujhe ladai karne ke liye koi bahana nahi bacha hai aapse.</p>
+      </div>
+      <div class="rule-card reveal">
+        <h3>Rule No. 3</h3>
+        <p>Jis din aap mujhse firse poori tarah se video call pe baat karoge, till nikla hamare beech ladai ka karan.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL ===== -->
+  <section class="final reveal">
+    <div class="final-heart">❤️</div>
+    <h2 class="final-title">I Love You Jaanu 😘</h2>
+    <p class="final-sub">Aapke liye hamesha free rehta hoon 🫶🏻</p>
+  </section>
+
+</main>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lb-close" onclick="closeLightbox()">✕</button>
+  <img id="lightboxImg" src="" alt="Memory">
+</div>
+
+<script>
+/* ================= MUSIC ================= */
+const music = document.getElementById('bg-music');
+const musicWidget = document.getElementById('musicWidget');
+const musicText = document.getElementById('music-text');
+
+function setMusicUI(playing){
+  musicWidget.classList.toggle('paused', !playing);
+  musicText.innerText = playing ? "Playing 💕" : "Play Music";
+}
+function startMusic(){
+  const p = music.play();
+  if(p !== undefined) p.then(()=>setMusicUI(true)).catch(()=>setMusicUI(false));
+}
+function toggleAudio(){
+  if(music.paused) startMusic();
+  else { music.pause(); setMusicUI(false); }
+}
+/* Auto play on first interaction */
+['click','touchstart','keydown'].forEach(ev=>{
+  window.addEventListener(ev, ()=>{
+    if(music.paused) startMusic();
+  }, {once:true, passive:true});
+});
+
+/* ================= REVEAL ON SCROLL ================= */
+let lastScrollY = window.scrollY;
+let scrollDir = 'down';
+
+window.addEventListener('scroll', ()=>{
+  const y = window.scrollY;
+  scrollDir = y > lastScrollY ? 'down' : 'up';
+  lastScrollY = y;
+}, {passive:true});
+
+const revealObserver = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.toggle('from-top', scrollDir === 'up');
+      entry.target.classList.add('visible');
+    } else {
+      /* fade out when leaving view, direction for next appearance */
+      entry.target.classList.remove('visible');
+    }
+  });
+}, {
+  threshold: 0.12,
+  rootMargin: '-40px 0px -60px 0px'
+});
+
+document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+
+/* initial hero fade-in */
+window.addEventListener('load', ()=>{
+  document.querySelectorAll('.hero .reveal').forEach((el,i)=>{
+    setTimeout(()=>el.classList.add('visible'), 200 + i*150);
+  });
+});
+
+/* ================= LETTER ================= */
+function openLetter(){
+  document.getElementById('waxBtn').style.display = 'none';
+  document.getElementById('waxHint').style.display = 'none';
+  const lb = document.getElementById('letterBody');
+  lb.style.display = 'block';
+  for(let i=0;i<10;i++) burstPetal();
+}
+
+/* ================= LIGHTBOX ================= */
+const lightbox = document.getElementById('lightbox');
+function openLightbox(src){
+  document.getElementById('lightboxImg').src = src;
+  lightbox.classList.add('show');
+}
+function closeLightbox(){ lightbox.classList.remove('show'); }
+document.addEventListener('keydown', e=>{ if(e.key === 'Escape') closeLightbox(); });
+
+/* ================= CLICK HEARTS ================= */
+document.addEventListener('click', e=>{
+  if(e.target.closest('.music-widget') || e.target.closest('.lightbox') ||
+     e.target.closest('.polaroid') || e.target.closest('.wax') ||
+     e.target.closest('video') || e.target.closest('.lb-close')) return;
+
+  const h = document.createElement('div');
+  h.className = 'click-heart';
+  h.innerText = ['❤️','💖','💕','✨','🌸','😘'][Math.floor(Math.random()*6)];
+  h.style.left = e.clientX + 'px';
+  h.style.top = e.clientY + 'px';
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(), 1100);
+});
+
+/* ================= PETALS ================= */
+const canvas = document.getElementById('petal-canvas');
+const ctx = canvas.getContext('2d');
+let W, H;
+function resize(){ W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+resize();
+window.addEventListener('resize', resize);
+
+const COLORS = ['#ff5f8f','#ff8fb3','#ffc2d6','#e9c884','#ff2f6e'];
+
+class Petal{
+  constructor(x,y){ this.reset(x,y); }
+  reset(x,y){
+    this.x = x !== undefined ? x : Math.random()*W;
+    this.y = y !== undefined ? y : -20 - Math.random()*120;
+    this.size = 6 + Math.random()*10;
+    this.speedY = .6 + Math.random()*1.4;
+    this.speedX = (Math.random()-.5)*.9;
+    this.rot = Math.random()*Math.PI*2;
+    this.rotSpeed = (Math.random()-.5)*.035;
+    this.sway = Math.random()*Math.PI*2;
+    this.swaySpeed = .012 + Math.random()*.02;
+    this.color = COLORS[Math.floor(Math.random()*COLORS.length)];
+    this.opacity = .55 + Math.random()*.45;
+  }
+  update(){
+    this.sway += this.swaySpeed;
+    this.y += this.speedY;
+    this.x += this.speedX + Math.sin(this.sway)*.7;
+    this.rot += this.rotSpeed;
+    if(this.y > H+40) this.reset();
+  }
+  draw(){
+    ctx.save();
+    ctx.translate(this.x, this.y);
+    ctx.rotate(this.rot);
+    ctx.globalAlpha = this.opacity;
+    ctx.fillStyle = this.color;
+    ctx.beginPath();
+    ctx.moveTo(0, -this.size);
+    ctx.bezierCurveTo(this.size*.75, -this.size*.55, this.size*.65, this.size*.6, 0, this.size);
+    ctx.bezierCurveTo(-this.size*.65, this.size*.6, -this.size*.75, -this.size*.55, 0, -this.size);
+    ctx.fill();
+    ctx.restore();
+  }
+}
+
+let petals = [];
+function initPetals(){
+  petals = [];
+  const count = window.innerWidth < 640 ? 22 : 36;
+  for(let i=0;i<count;i++) petals.push(new Petal(Math.random()*W, Math.random()*H));
+}
+initPetals();
+window.addEventListener('resize', initPetals);
+
+function burstPetal(){
+  petals.push(new Petal(Math.random()*W, -20));
+  if(petals.length > 70) petals.shift();
+}
+
+function animate(){
+  ctx.clearRect(0,0,W,H);
+  petals.forEach(p=>{ p.update(); p.draw(); });
+  requestAnimationFrame(animate);
+}
+animate();
+</script>
+</body>
+</html>
