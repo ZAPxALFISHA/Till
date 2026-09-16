@@ -379,10 +379,10 @@ body{
 
 <!-- ============ HERO ============ -->
 <header class="hero">
-  <div class="hero-kicker reveal">Mere Till Ki Duniya</div>
+  <div class="hero-kicker reveal">Mere Till ki malkin</div>
   <div class="hero-seal reveal">A</div>
   <h1 class="hero-title reveal">I Love You Jaanu 😘</h1>
-  <p class="hero-sub reveal">Yaar, aap mere liye itna karte ho, kya bolu 🥹❤️</p>
+  <p class="hero-sub reveal">Yaar, aap mere liye itna karte ho to mera bhi haq banta hai na apke liye karu 🥹❤️</p>
   <div class="hero-hint reveal">
     <span>Scroll Down</span>
     <div class="arrow"></div>
@@ -422,8 +422,8 @@ body{
   <!-- ===== SECTION 2 ===== -->
   <section class="section">
     <div class="sec-head reveal">
-      <span class="badge">Sapna Aur Till 💭</span>
-      <h2 class="sec-title">Mere Till Ki Baatein 🙈</h2>
+      <span class="badge">Sapna me Till aya tha raat ko 💭</span>
+      <h2 class="sec-title">Mere Till ko achha se dekhna aap samjhe 🙈</h2>
       <div class="divider"></div>
     </div>
 
@@ -435,10 +435,10 @@ body{
         <img src="zap3.jpg" alt="Memory"><div class="polaroid-cap">Hamesha Aise Hi Hasna 😂🍿</div>
       </div>
       <div class="polaroid reveal" onclick="openLightbox('zap4.jpg')">
-        <img src="zap4.jpg" alt="Memory"><div class="polaroid-cap">Our Special World 🌍💖</div>
+        <img src="zap4.jpg" alt="Memory"><div class="polaroid-cap">ye mai hu apse ladai karne wala  🌍💖</div>
       </div>
       <div class="polaroid reveal" onclick="openLightbox('zap5.jpg')">
-        <img src="zap5.jpg" alt="Memory"><div class="polaroid-cap">Malkin Alfisha Forever 💍</div>
+        <img src="zap5.jpg" alt="Memory"><div class="polaroid-cap">Malkin ka bachha 💍</div>
       </div>
     </div>
 
@@ -452,14 +452,14 @@ body{
   <!-- ===== SECTION 3 ===== -->
   <section class="section">
     <div class="sec-head reveal">
-      <span class="badge">Shaadi Aur Milne Ki Baat 💍</span>
-      <h2 class="sec-title">Jaldi Shaadi Karni Hai ❤️</h2>
+      <span class="badge"> Milne aane wala hu jaldi 💍</span>
+      <h2 class="sec-title">Jaldi Shaadi Karna Hai mujhe till ke baaju wali se baate karna hai ❤️</h2>
       <div class="divider"></div>
     </div>
 
     <div class="gallery">
       <div class="polaroid reveal" onclick="openLightbox('zap6.jpg')">
-        <img src="zap6.jpg" alt="Memory"><div class="polaroid-cap">Meri Jaan Alfisha ❤️</div>
+        <img src="zap6.jpg" alt="Memory"><div class="polaroid-cap">ye mai takla jab hua tha tab ka  ❤️</div>
       </div>
       <div class="polaroid reveal" onclick="openLightbox('zap7.jpg')">
         <img src="zap7.jpg" alt="Memory"><div class="polaroid-cap">Hamesha Meri Rehna 👑</div>
@@ -480,7 +480,7 @@ body{
 
       <div class="letter-body" id="letterBody">
         <p>Anyways, ab chat mein bata diya karunga sabhi baatein aapko ❤️ To mera mehnat se website banaya hua aapko pasand nahi aayega hai na? 🥺 Mere efforts kahan dikhenge aapko jaanu? Main to free rehta hoon, aisa lagta hai na aapke liye? 🥺❤️</p>
-        <p class="gold">To haan, aapke liye hamesha free rehta hoon. Sabse pehle aap ho, uske baad kaam hai mere liye ❤️</p>
+        <p class="gold">To haan, aapke liye hamesha free rehta hoon. Sabse pehle aap ho, uske baad kaam hai mere liye ❤️ aur ha jaanu jaanu thora saaf se bhejo till ki snap 🙈 till aur bobos milega ab to banega nera body jaanu agar roj milta to baat alag hoti na bachha</p>
         <p style="font-size:1.05rem;margin-top:14px;">I love you jaanu 😘😘😘😘❤️🫶🏻</p>
       </div>
     </div>
@@ -526,16 +526,16 @@ body{
 
     <div class="rules-grid">
       <div class="rule-card reveal">
-        <h3>Rule No. 1</h3>
+        <h3>jaanu kab milega maula</h3>
         <p>Mujhe ladai karni hai, 3-4 dino se hui nahi hai 🥺</p>
       </div>
       <div class="rule-card reveal">
-        <h3>Rule No. 2</h3>
+        <h3>kya karu ab bachha kuchh batao aap</h3>
         <p>Ab mujhe ladai karne ke liye koi bahana nahi bacha hai aapse.</p>
       </div>
       <div class="rule-card reveal">
         <h3>Rule No. 3</h3>
-        <p>Jis din aap mujhse firse poori tarah se video call pe baat karoge, till nikla hamare beech ladai ka karan.</p>
+        <p>Jis din aap mujhse firse poori tarah se video call pe baat karoge, romantic hokar us din sayad ek maula mill jaye</p>
       </div>
     </div>
   </section>
@@ -573,12 +573,20 @@ function toggleAudio(){
   if(music.paused) startMusic();
   else { music.pause(); setMusicUI(false); }
 }
-/* Auto play on first interaction */
-['click','touchstart','keydown'].forEach(ev=>{
-  window.addEventListener(ev, ()=>{
-    if(music.paused) startMusic();
-  }, {once:true, passive:true});
-});
+/* Auto play on first interaction (excluding music widget) */
+let musicAutoTried = false;
+function autoStartOnce(e){
+  if(musicAutoTried) return;
+  if(e && e.target && e.target.closest('.music-widget')) return;
+  musicAutoTried = true;
+  if(music.paused) startMusic();
+  document.removeEventListener('click', autoStartOnce);
+  document.removeEventListener('touchstart', autoStartOnce);
+  document.removeEventListener('keydown', autoStartOnce);
+}
+document.addEventListener('click', autoStartOnce);
+document.addEventListener('touchstart', autoStartOnce);
+document.addEventListener('keydown', autoStartOnce);
 
 /* ================= REVEAL ON SCROLL ================= */
 let lastScrollY = window.scrollY;
